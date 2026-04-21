@@ -5,6 +5,9 @@ echo "Building and deploying the auto-scaler is started."
 
 docker build -t swarm-autoscaler:v1.0 . --no-cache
 
+docker rm autoscaler
+docker service rm autoscaler
+
 docker service create \
   --name autoscaler \
   --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \
