@@ -23,7 +23,7 @@ services = [
 rule_template = {}
 for service in services:
     rule_template[f'{prefix}{service}'] = {
-        'metric_query': f"avg(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_service_name='{prefix}{service}'}[2m])) * 100",
+        'metric_query': "avg(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_service_name='%s'}[2m])) * 100".format(f'{prefix}{service}'),
         'scale_up_threshold': 70,
         'scale_down_threshold': 30,
         'min_replicas': 3,
@@ -31,7 +31,6 @@ for service in services:
         'scale_up_step': 1,
         'scale_down_step': 1,
         'cooldown': 120,
-
     }
 
 SCALING_RULES = dict(rule_template)
