@@ -11,3 +11,7 @@ The Docker Swarm Cluster are deployed.
 1. Running the `docker stack deploy -c monitoring-stack.yml monitoring` command to deploy the Prometheus as a monitoring system in the Docker Swarm Manager.
 2. Running the `cd scaler/` command then execute the `./deploy.sh` script to deploy the automatic service scaler in the Docker Swamr Manager.
 3. Happy Scaling!
+
+# References
+
+- https://oneuptime.com/blog/post/2026-02-08-how-to-scale-docker-swarm-services-based-on-metrics
