@@ -26,7 +26,7 @@ for service in services:
     service_name = f'{prefix}{service}'
     rule_template[f'{prefix}{service}'] = {
         'metric_query': 'avg(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_service_name="' + service_name + '"}[2m])) * 100',
-        'scale_up_threshold': 70,
+        'scale_up_threshold': 50,
         'scale_down_threshold': 30,
         'min_replicas': 3,
         'max_replicas': 12,
