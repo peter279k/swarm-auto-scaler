@@ -4,7 +4,15 @@ import logging
 import requests
 
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+LOG_FILE_PATH = '/app/scaler.log'
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE_PATH),
+        logging.StreamHandler(),
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Configuration
