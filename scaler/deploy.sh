@@ -10,7 +10,7 @@ docker service rm autoscaler
 docker service create \
   --name autoscaler \
   --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \
-  --mount type=bind,source=/tmp/scaler.log,target=/app/scaler.log \
+  --mount type=bind,source=/tmp/scaler.log,target=/app/scaler.log,bind-create-src \
   --network monitoring_monitoring \
   --constraint 'node.role == manager' \
   --replicas 1 \
