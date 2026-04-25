@@ -26,7 +26,6 @@ services = [
     'api_gateway', 'data_analysis_service', 'ioht_data_collector',
     'fhir_generator', 'fhir_converter', 'fhir_ig_manager',
     'fhir_profile_manager', 'fhir_data_manager', 'terminology_manager',
-    'fhir-server-adapter',
 ]
 
 rule_template = {}
